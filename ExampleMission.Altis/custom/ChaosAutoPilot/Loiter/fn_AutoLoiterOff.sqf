@@ -1,6 +1,23 @@
-_unit = _this select 0;
+_isplayer = _this select 0;
+private "_veh";
+private "_unit";
 
-_veh = vehicle _unit;
+if (!(isNull Loiter_Refresh_Handle)) then
+{
+	terminate Loiter_Refresh_Handle;
+};
+
+if (_isplayer == 1) then
+{
+	_veh = vehicle player;
+	_unit = driver _veh;
+}
+else
+{
+	_unit = _this select 1;
+	_veh = vehicle _unit;
+};
+
 _veh deleteVehicleCrew _unit;
 
 //can be used to let other people take over the pilot seat from the bot
@@ -8,11 +25,10 @@ _veh setVariable ["ChaosPilot_PilotUnit", nil, true]; //#TODO maybe broadcast gl
 _veh setVariable ["ChaosPilot_PreviousOwner", nil, true]; //#TODO maybe broadcast global???
 _veh setVariable ["ChaosPilot_AutoPilotOn", nil, true]; //#TODO maybe broadcast global???
 
-if (count _this > 1) then
+if (_isplayer == 1) then
 {
-	_player = _this select 1;
-	moveOut _player;
-	_player moveInDriver _veh; 
+	moveOut player;
+	player moveInDriver _veh; 
 };
 
 

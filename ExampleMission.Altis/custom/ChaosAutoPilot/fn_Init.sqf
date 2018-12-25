@@ -28,4 +28,4 @@ ChaosPilot_LoiterMarkerName = "CPLoiterMk1";
 
 
 player addAction ["<t color='#00FF00'>Auto Loiter Console</t>", {player call ChaosPilot_fnc_ShowLoiterDialog;}, [], 1, false, true, "", "(player call ChaosPilot_fnc_CanOnAutoLoiter) == 0"];
-player addAction ["<t color='#FF0000'>Turn Off Loiter</t>", {player call ChaosPilot_fnc_AutoLoiterOff}, [], 1, false, true, "", "player call ChaosPilot_fnc_CanOffAutoLoiter"];
+player addAction ["<t color='#FF0000'>Turn Off Loiter</t>", {[1] call ChaosPilot_fnc_AutoLoiterOff}, [], 1, false, true, "", "player call ChaosPilot_fnc_CanOffAutoLoiter"];

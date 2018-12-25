@@ -38,7 +38,7 @@ diag_log ["Subway Loaded"];
 		waitUntil{alive player}; //All above, code to be sure to wait for the exile client to be fully loaded in.
 		
 		TRAIN_ACTION_ID = player addAction ["<t color='#00FF00'>Auto Loiter Console</t>", {player call ChaosPilot_fnc_ShowLoiterDialog;}, [], 1, false, true, "", "(player call ChaosPilot_fnc_CanOnAutoLoiter) == 0"];
-		TRAIN_ACTION_ID2 = player addAction ["<t color='#FF0000'>Turn Off Loiter</t>", {player call ChaosPilot_fnc_AutoLoiterOff}, [], 1, false, true, "", "player call ChaosPilot_fnc_CanOffAutoLoiter"];
+		TRAIN_ACTION_ID2 = player addAction ["<t color='#FF0000'>Turn Off Loiter</t>", {[1] call ChaosPilot_fnc_AutoLoiterOff}, [], 1, false, true, "", "player call ChaosPilot_fnc_CanOffAutoLoiter"];
 		
 		waitUntil{!alive player};  
 		player removeAction TRAIN_ACTION_ID;

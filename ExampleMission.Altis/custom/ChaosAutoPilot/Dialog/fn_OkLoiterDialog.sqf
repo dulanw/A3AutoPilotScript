@@ -13,7 +13,8 @@ Loiter_Refresh =
 		//the player isn't in the vehicle
 		if (!(_pveh isEqualTo _veh)) exitWith 
 		{
-			_veh deleteVehicleCrew _unit;
+			[0, _unit] call ChaosPilot_fnc_AutoLoiterOff;
+			/* _veh deleteVehicleCrew _unit;
 			//can be used to let other people take over the pilot seat from the bot
 			_veh setVariable ["ChaosPilot_PilotUnit", nil, true]; //#TODO maybe broadcast global???
 			_veh setVariable ["ChaosPilot_PreviousOwner", nil, true]; //#TODO maybe broadcast global???
@@ -21,12 +22,12 @@ Loiter_Refresh =
 			_veh enableCopilot true;
 			
 			ChaosPilot_LoiterInfoTemp = [-1,-1,-1];
-			ChaosPilot_LoiterInfo set [0, [-1,-1,-1]];
+			ChaosPilot_LoiterInfo set [0, [-1,-1,-1]]; */
 		};
 		
 		if ((_pveh isEqualTo _veh) && !(_driver isEqualTo _unit) ) exitWith 
 		{
-			[_unit] call ChaosPilot_fnc_AutoLoiterOff;
+			[1] call ChaosPilot_fnc_AutoLoiterOff;
 		};
 		
 		sleep 1;
@@ -55,19 +56,20 @@ if (_CanOn == 0) then
 		{
 			_unit = _veh getVariable ["ChaosPilot_PilotUnit",false];
 			_Pos = ChaosPilot_LoiterInfo select 0; //get the current loiter position before deleting
-			[_unit, player] call ChaosPilot_fnc_AutoLoiterOff;
-			
+			[1] call ChaosPilot_fnc_AutoLoiterOff;
+			hint "auto off";
 		};
 		
 		_ret = [_Pos, _RadiusIndex, _HeightIndex, _SideIndex] call ChaosPilot_fnc_AutoLoiterOn;
 		if (count _ret > 0) then
 		{
+			hint "on";
 			_unit = _ret select 0;
 			_veh = vehicle _unit;
 			//hint format["vehicle %1 %2", _veh, group _unit];
 			waitUntil { _unit == driver _veh; };
 			
-			[_unit, _veh] spawn Loiter_Refresh;
+			Loiter_Refresh_Handle = [_unit, _veh] spawn Loiter_Refresh;
 			
 			vehicle _unit engineOn true;
 			_veh setEngineRPMRTD [9000, -1];

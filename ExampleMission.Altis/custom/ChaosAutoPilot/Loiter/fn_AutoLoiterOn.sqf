@@ -41,6 +41,7 @@ if (_CanEnable) then
 	//create a new group, player cant give commands
 	_group = createGroup [side player, true];
 	//_group = group player;
+	//_group selectLeader player;
 	//create unit
 	_unit = _group createUnit ["B_Pilot_F",[0,0,0], [], 0, "NONE"];
 	removeAllWeapons _unit;
@@ -190,7 +191,7 @@ if (_CanEnable) then
 				_anglewp2 = 360 - _anglewp2; 
 			};
 			
-			_deltaAngleNew = abs (_anglewp2 - _anglewp1);			
+			_deltaAngleNew = abs (_anglewp2 + _anglewp1);			
 			if (_forEachIndex != 1) then
 			{
 				if (_deltaAngleNew < _deltaAngle) then {_deltaAngle = _deltaAngleNew; _deltaAnglewp = _forEachIndex;};
