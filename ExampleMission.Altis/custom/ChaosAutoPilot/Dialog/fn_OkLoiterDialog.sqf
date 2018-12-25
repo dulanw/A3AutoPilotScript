@@ -26,7 +26,7 @@ Loiter_Refresh =
 		
 		if ((_pveh isEqualTo _veh) && !(_driver isEqualTo _unit) ) exitWith 
 		{
-			player call ChaosPilot_fnc_AutoLoiterOff;
+			[_unit] call ChaosPilot_fnc_AutoLoiterOff;
 		};
 		
 		sleep 1;
@@ -53,8 +53,9 @@ if (_CanOn == 0) then
 			
 		if (_AutoPilotOn) then
 		{
+			_unit = _veh getVariable ["ChaosPilot_PilotUnit",false];
 			_Pos = ChaosPilot_LoiterInfo select 0; //get the current loiter position before deleting
-			player call ChaosPilot_fnc_AutoLoiterOff;
+			[_unit, player] call ChaosPilot_fnc_AutoLoiterOff;
 			
 		};
 		

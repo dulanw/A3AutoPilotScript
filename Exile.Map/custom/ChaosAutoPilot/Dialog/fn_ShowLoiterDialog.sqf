@@ -61,9 +61,7 @@ Loiter_OnMapClick =
 
 	_pos = _ctrl ctrlMapScreenToWorld [_xpos, _ypos];
 	ChaosPilot_LoiterInfoTemp = _pos;
-	
-	hint format["%1", _pos];
-	
+		
 	deleteMarkerLocal ChaosPilot_LoiterMarkerNameTemp;
 	createMarker [ChaosPilot_LoiterMarkerNameTemp, _pos];
 	ChaosPilot_LoiterMarkerNameTemp setMarkerShapeLocal "ICON";
