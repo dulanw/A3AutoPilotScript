@@ -3,32 +3,6 @@ ChaosPilot_LoiterInfo = [[-1,-1,-1],0, 0, 0]; //[position of marker, radius inde
 ChaosPilot_LoiterMarkerNameTemp = "CPLoiterMk1Temp";
 ChaosPilot_LoiterMarkerName = "CPLoiterMk1";
 
-// ChaosPilot_map_click_handler =
-// [
-	// "SetLoiterPointer","onMapSingleClick",
-	// {
-		// if (_shift && (vehicle player isKindOf "Plane")) then {
-			// _worldSize = if (isNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize")) then {getNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize");} else {8192;};
-			// if (_pos select 0 > _worldSize || _pos select 1 > _worldSize ||_pos select 0 < 0 || _pos select 1 < 0) then
-			// {
-				// hint "Selected point not inside map";
-			// }
-			// else
-			// {
-				// _CanOn = player call ChaosPilot_fnc_CanOnAutoLoiter;
-				// if (_CanOn isEqualTo 0) then
-				// {
-					// ChaosPilot_MapClickLocation = _pos;
-					// _handle = [] spawn ChaosPilot_fnc_ShowLoiterDialog;
-				// };
-			// };
-		// };
-	// }
-// ] call BIS_fnc_addStackedEventHandler; 
-
-
-diag_log ["Subway Loaded"];
-
 [] spawn {
 	while {true} do {
 		waitUntil{!isNil "ExileClientLoadedIn"};

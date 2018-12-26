@@ -12,8 +12,9 @@
 
 #define LOITER_RADIUSES [700,800,900,1000,1200,1400,1600,1800,2000, 2200, 2400, 2600, 2800, 3000] //radiuses available for the players to select
 #define LOITER_POINTS   [0  ,  0,  4,   8,   8,   8,   8,   8,   8,    8,   10,    12,    14,    16] //additional waypoints for each radius, default radius + whatever matches on here
-#define LOITER_COMPLETION_DISTANCE 0.5 //the completion radius for each waypoint, a multiple of the distance between 2 neighboring waypoints
+#define LOITER_COMPLETION_DISTANCE 0.6 //the completion radius for each waypoint, a multiple of the distance between 2 neighboring waypoints
 #define LOITER_HEIGHTS [700,800,900,1000,1200,1400,1600,1800,2000, 2200, 2400, 2600, 2800, 3000] //heights available for the players to select
 #define LOITER_SIDES ["Left", "Right"]
 
-#define LOITER_START_DIST 2000 //distance at which to reposition for the radius
+#define LOITER_START_DIST 3000 //distance at which to reposition for the radius
+#define LOITER_SPEED 200 //Limit the speed of the vehicle (only for AI) default 200 otherwise the ai cannot change direction in time for the next waypoint

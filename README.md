@@ -24,6 +24,7 @@ All the settings that can be changed are inside \custom\ChaosAutoPilot\AutoPilot
 | LOITER_SIDES | side (which side the weapons are on) options available for the players to select |
 | LOITER_START_DIST | distance at which to reposition for the radius and fly in |
 | LOITER_POINTS | The number of additional waypoints for each corresponding radius |
+| LOITER_SPEED | Limit the speed of the vehicle (only for AI) default 200 otherwise the ai cannot change direction in time for the next waypoint |
 
 
 ## License

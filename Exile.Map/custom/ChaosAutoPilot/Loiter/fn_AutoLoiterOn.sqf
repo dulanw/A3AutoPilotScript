@@ -24,7 +24,7 @@ else
 	}
 	else
 	{
-		hint "Not Enough seats"; //#TODO replace with exile toast
+		["ErrorTitleAndText", ["Auto Pilot OFF!", "No Empty seats!"]] call ExileClient_gui_toaster_addTemplateToast;
 	};
 };
 
@@ -215,6 +215,7 @@ if (_CanEnable) then
 	//_veh flyInHeight _Height;
 	
 	_veh flyInHeightASL [_Height, _Height, _Height];
+	_veh limitSpeed LOITER_SPEED;
 	
 	
 	/*EXTEND LINE START*/
