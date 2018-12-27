@@ -3,7 +3,7 @@ Spawn in an AI as a pilot and loiter around a selected area
 
 ## Installation
 ### Exile
-Copy the custom folder into your Exile.<MapName> folder.  
+Copy the custom folder into your Exile.MapName folder.  
 Merge or copy the description.ext  
 Merge or copy the initPlayerLocal.sqf  
   
