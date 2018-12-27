@@ -1,11 +1,11 @@
 # A3AutoPilotScript
-Spawn in an AI as a pilot and loiter around a select area
+Spawn in an AI as a pilot and loiter around a selected area
 
 ## Installation
 ### Exile
-Copy the custom folder into your Exile.<MapName> folder.
-Merge or copy the description.ext
-Merge or copy the initPlayerLocal.sqf
+Copy the custom folder into your Exile.<MapName> folder.  
+Merge or copy the description.ext  
+Merge or copy the initPlayerLocal.sqf  
   
 ## Settings
 All the settings that can be changed are inside \custom\ChaosAutoPilot\AutoPilotConfig.h
@@ -28,5 +28,5 @@ All the settings that can be changed are inside \custom\ChaosAutoPilot\AutoPilot
 
 
 ## License
-Noncommercial - You may not use this material for any commercial purposes. 
+Noncommercial - You may not use this material for any commercial purposes.  
 Feel free to Modify and Distribute.
